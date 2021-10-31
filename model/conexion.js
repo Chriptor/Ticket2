@@ -1,19 +1,8 @@
-const sequelize= require('sequelize')
+const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('', null, null, {
+const sequelize = new Sequelize('devface', 'root', '', {
     dialect: 'mariadb',
-    server: process.env.DB_HOST,
-    // port: process.env.DB_PORT,
-    dialectOptions: {
-      authentication: {
-        type: 'default',
-        options: {
-          encrypt: true,
-          userName: process.env.DB_USR,
-          password: process.env.DB_PASS
-        }
-      },
-    }
+    dialectOptions: {connectTimeout: 1000} // mariadb connector option
   })
-  
-  module.exports = sequelize;
+
+  module.exports = sequelize
