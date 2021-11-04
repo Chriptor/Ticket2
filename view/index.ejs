@@ -25,11 +25,8 @@
           <li><a href="#" class="nav-link px-2 text-white">About</a></li>
         </ul>
 
-        <a  class="navbar-brand" href="#" disabled>DevIn</a>
-<!-- parte de la foto de perfil  -->
-        <!-- <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-          <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-        </a> -->
+        <a  class="navbar-brand" href="#" disabled>Dev In</a>
+
       </div>
     </div>
   </header>
@@ -39,11 +36,14 @@
   <div class="col-md-10 mx-auto col-lg-5 ">
     <form action="/login" method="POST" class="p-4 p-md-5 border rounded-3 bg-light ">
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+        Iniciar Sesión
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" name="correo" >
         <label for="floatingInput">Correo Electr&oacute;nico</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+        <input type="password" class="form-control" id="floatingPassword" name="password" >
         <label for="floatingPassword">Password</label>
       </div>
       <div class="checkbox mb-3">
@@ -52,11 +52,12 @@
         </label>
       </div>
       <button class="w-40 btn btn-lg btn-primary" type="submit">Iniciar sesi&oacute;n  </button> 
-      <a href="" class=" w-40 btn btn-lg btn-succes start-100 translate-end-x" role="button" type="submit">Resgistrate</a>
+      <a href="/registrate" class=" w-40 btn btn-lg btn-succes start-100 translate-end-x" role="button" type="submit">Resgistrate</a>
       <hr class="my-4">
       <small class="text-muted">Al Resgistrarte o iniciar sesion aceptas los terminos y condiciones</small>
     </form>
   </div>
+  
   </div>
   
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

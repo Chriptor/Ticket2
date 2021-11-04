@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/heroes/"> -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <title>Sign in</title>
+</head>
+<body> 
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <a  class="navbar-brand" href="#" disabled>DevIn</a>
+      </div>
+    </div>
+  </header>
+  <div class="container position-absolute top-100 start-50 translate-middle">
+    <h3><%= Invalido %> </h3>
+    <h4><%= error %> </h4>
+  <div class="col-md-8 mx-auto  ">
+    <form action="/registrar" method="POST" class=" p-4 border rounded-3 bg-light ">
+
+      <div class="form-floating mb-3 ">
+        <input type="text" class="form-control" id="floatingInput" name="nombre" required>
+        <label for="floatingInput">Nombre(s)</label>
+      </div>
+      <div class="row">
+      <div class="form-floating mb-3 col">
+        <input type="text" class="form-control" id="floatingInput" name="apellido_p" required>
+        <label for="floatingInput">Apellido Paterno</label>
+      </div>
+    
+      <div class="form-floating mb-3 col">
+        <input type="text" class="form-control" id="floatingInput" name="apellido_m" required>
+        <label for="floatingInput">Apellido Materno</label>
+    </div>
+    </div>
+    <div class="row">
+        <div class="form-floating mb-3 col">Foto de Perfil 
+            </div>    
+    <div class="form-floating mb-3 col">
+        <input  id="inputFileToLoad" type="file" accept=".jpg, .jpeg, .png" onchange="encodeImageFileAsURL();" value="Foto de perfil" required/>
+        <input id="carga" type="text" name="foto_perfil" hidden>
+    </div>
+    </div>
+        <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" name="correo" required>
+        <label for="floatingInput">Correo</label>
+      </div>
+      <div class="row">
+      <div class="form-floating mb-3 col">
+        <input type="text" class="form-control" id="floatingInput" name="pais" required>
+        <label for="floatingInput">País</label>
+      </div>
+      <div class="form-floating mb-3 col">
+        <input type="text" class="form-control" id="floatingInput" name="ciudad" required>
+        <label for="floatingInput">Ciudad</label>
+      </div>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="date" class="form-control" id="floatingInput" name="fecha_nac" required>
+        <label for="floatingInput">Fecha de Nacimiento</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="estudios" required>
+        <label for="floatingInput">Estudios</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="certificaciones" >
+        <label for="floatingInput">Certificaciones</label>
+      </div>
+<div class="row">
+      <div class="form-floating mb-3 col"> Idiomas</div>
+      <div class="form-floating mb-3 col">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="idiomas1" id="idiomas1" value="Inglés ">
+        <label class="form-check-label" for="idiomas1">Inglés</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="idiomas2" id="idiomas2" value="Francés ">
+        <label class="form-check-label" for="idiomas2">Francés</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="idiomas3" id="idiomas3" value="Ruso " >
+        <label class="form-check-label" for="idiomas3">Ruso</label>
+      </div>
+    </div>
+</div>
+      <div class="form-floating mb-3">
+        <input type="url" class="form-control" id="floatingInput" name="linkedin" required>
+        <label for="floatingInput">Perfil de Linkedin</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="Hobbies" required>
+        <label for="floatingInput">Hobbies</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" name="password" required>
+        <label for="floatingPassword">Password</label>
+      </div>
+      
+      <a href="/" class=" w-40 btn btn-lg btn-succes start-100 translate-end-x" role="button" >Iniciar sesi&oacute;n</a>   
+      
+        <button class="w-40 btn btn-lg btn-primary" type="submit">Resgistrar</button>
+      <hr class="my-4">
+      <small class="text-muted">Al Resgistrarte o iniciar sesion aceptas los terminos y condiciones</small>
+    </form>
+  </div>
+  </div>
+  
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+       <script type='text/javascript'>
+        function encodeImageFileAsURL() {
+      
+          var filesSelected = document.getElementById("inputFileToLoad").files;
+          if (filesSelected.length > 0) {
+            var fileToLoad = filesSelected[0];
+      
+            var fileReader = new FileReader();
+      
+            fileReader.onload = function(fileLoadedEvent) {
+              var srcData = fileLoadedEvent.target.result; // <--- data: base64
+              var inputNombre = document.getElementById("carga");
+              inputNombre.value = srcData;
+              
+            }
+            fileReader.readAsDataURL(fileToLoad);
+          }
+        }
+      </script>
+
+      </body>
+</html>
+

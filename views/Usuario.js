@@ -6,7 +6,7 @@ router.get('/user', async (req, res) => {
     res.render('usuarios', {TituloW:"Usuarios",arrayUsuario})
 })
 
-router.post('/register', async (req, res) => {
+router.post('/registrar', async (req, res) => {
     users.newUser(req,res);
 })
 

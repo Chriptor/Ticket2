@@ -7,7 +7,7 @@ const router = require('express').Router();
 
 router.post('/login', async (req, res) => {
     let { error } = await login.validate(req.body);
-    const user = await User.findOne({ email: req.body.email });
+    const user = await User.findOne({ correo: req.body.correo });
     let validPassword = false
     if(user){validPassword = await bcrypt.compare(req.body.password, user.password);}    
     if (error) return res.render("index",{Invalido:"", error: error.details[0].message })
@@ -26,8 +26,9 @@ router.post('/login', async (req, res) => {
       expires: new Date(Date.now() + 8 * 3600000) // cookie will be removed after 8 hours
     })
     .cookie('user', user.nombre )
+    .cookie('idUser', user._id )
     .redirect(301, '/dashboard')
-   
+    
   
 })
 module.exports = router

@@ -16,7 +16,8 @@ User.init({
     certificaciones: DataTypes.STRING,
     idiomas: DataTypes.STRING,
     linkedin: DataTypes.STRING,
-    	
+    Hobbies: DataTypes.STRING,
+    password: DataTypes.STRING
 }, {sequelize,
     modelName: 'users',
     timestamps: false
