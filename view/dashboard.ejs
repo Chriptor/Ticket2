@@ -31,13 +31,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
+            <% if (arrayUsuario.length > 0) { %>
+              <% arrayUsuario.forEach(usuario => { let cont = 1 %>
+          <tr><td><%= cont++ %> </td><td><a href="/info?<% usuario._id %>"><%= usuario.nombre %> <%= usuario.apellido_p %></a></td><td><%= usuario.pais %></td><td><%= usuario.linkedin %></td><td><a class="btn btn-primary" href="" role="button">Agregar Amigo</a></td></tr>
+              <% }) %>
+          <% } %>
+            
             
           </tbody>
         </table>

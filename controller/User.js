@@ -64,3 +64,12 @@ try {
 }
 }
 
+module.exports.buscar1Usuario=async(id)=>{
+
+    try {
+        const Usuario =  User.findOne({ _id: id });
+        return Usuario
+    } catch (error) {
+        console.log(error)
+    }
+    }

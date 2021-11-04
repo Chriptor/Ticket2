@@ -7,6 +7,7 @@ const rutasUsuario = require('./views/Usuario')
 const login = require('./views/login')
 const { verificaToken } = require('./controller/validaciones');
 const cookieParser = require('cookie-parser');
+const lista=require('./controller/User')
 
 const app = express();
 
@@ -47,12 +48,13 @@ app.get('/', (req, res) => {
     res.render("index",{Invalido:"", error:""})
 })
 app.get('/registrate', (req, res) => {
-    
+
     res.render("registro",{Invalido:"", error:""})
 })
-app.get('/dashboard', verificaToken, async (req, res) => {
 
-    res.render("dashboard",{TituloW:"Dashboard"})
+app.get('/dashboard', verificaToken, async (req, res) => {
+    
+    res.render("dashboard",{TituloW:"Dashboard", arrayUsuario: await lista.listarUsuario(), userLoged: await lista.buscar1Usuario(req.cookies.idUser)})
 })
 app.get('/salir', async (req, res) => {
     
