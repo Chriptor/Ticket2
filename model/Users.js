@@ -81,7 +81,7 @@ const userSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     },
-    amigos: [{ compis: String, solicitudes: Date }],
+    amigos: [{ compis: String, solicitudes: String }],
     mensajes:[{de: String, texto: String}]
 })
 

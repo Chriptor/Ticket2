@@ -23,13 +23,13 @@ const verificaToken = (req, res, next) => {
 
 const schemaRegister = Joi.object({
     nombre: Joi.string().min(6).max(255).required(),
-    apellido_p: Joi.string().min(6).max(255).required(),
-    apellido_m: Joi.string().min(6).max(255).required(),
+    apellido_p: Joi.string().max(255).required(),
+    apellido_m: Joi.string().max(255).required(),
     correo: Joi.string().min(6).max(255).required().email(),
     password: Joi.string().min(6).max(1024).required(),
     foto_perfil: Joi.string().min(6).required(),
-    pais: Joi.string().min(3).required(),
-    ciudad: Joi.string().min(3).required(),
+    pais: Joi.string().required(),
+    ciudad: Joi.string().required(),
     fecha_nac: Joi.date().required(),
     estudios: Joi.string().min(2).required(),
     certificaciones: Joi.string().min(2).required(),

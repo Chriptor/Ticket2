@@ -11,7 +11,7 @@ module.exports.newUser = async(req,res)=>{
          )
      }
      
-     const emailEx = await User.findOne({ email: req.body.email });
+     const emailEx = await User.findOne({ correo: req.body.correo });
      if (emailEx) {
          return res.status(400).json({error: 'Email ya registrado'})
     }

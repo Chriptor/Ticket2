@@ -10,10 +10,11 @@ router.post('/registrar', async (req, res) => {
     users.newUser(req,res);
 })
 
-router.get('/info', async (req, res) => {
-    
-    res.render('info', {TituloW:"Info",})
-})
+// router.get('/info:id', async (req, res) => {
+//     console.log("si entra");
+//     // res.render('info', {TituloW:"Info"})
+//     res.render('info', {TituloW:"Info", info: await users.buscar1Usuario(req.params.id)})
+// })
 
 
 module.exports=router;
