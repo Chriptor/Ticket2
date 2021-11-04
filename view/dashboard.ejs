@@ -34,9 +34,11 @@
             <% if (arrayUsuario.length > 0) { %>
               <% arrayUsuario.forEach(usuario => { 
                 let cont = 1;
-                if (userLoged._id!=usuario.id) {%>
-          <tr><td><%= cont++ %> </td><td><a href="/info/<%= usuario._id %>"><%= usuario.nombre %> <%= usuario.apellido_p %></a></td><td><%= usuario.pais %></td><td><%= usuario.linkedin %></td><td><a class="btn btn-primary" href="" role="button">Agregar Amigo</a></td></tr>
-              <%} }) %>
+                
+                if (userLoged.id!=usuario.id) 
+                 {%>
+          <tr><td><%= cont %> </td><td><a href="/info/<%= usuario.id %>"><%= usuario.nombre %> <%= usuario.apellido_p %></a></td><td><%= usuario.pais %></td><td><%= usuario.linkedin %></td><td><a class="btn btn-primary" href="" role="button">Agregar Amigo</a></td></tr>
+              <% cont=cont+1 } }) %>
           <% } %>
             
             

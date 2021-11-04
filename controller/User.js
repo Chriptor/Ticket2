@@ -28,6 +28,7 @@ module.exports.newUser = async(req,res)=>{
 
 
     const user = new User({
+        
         nombre: req.body.nombre,
         apellido_p: req.body.apellido_p,
         apellido_m: req.body.apellido_m,
@@ -45,9 +46,10 @@ module.exports.newUser = async(req,res)=>{
     })
 try {
     const userDB = await user.save();
+    
     res.json({
         error: null,
-        data: userDB
+        // data: userDB
     })
 } catch (error) {
     res.status(400).json(error )    
@@ -67,9 +69,30 @@ try {
 module.exports.buscar1Usuario=async(id)=>{
 
     try {
-        const Usuario =  User.findOne({ _id: id });
+        const Usuario = await User.findById(id, 'nombre apellido_p apellido_m pais ciudad fecha_nac estudios certificaciones idiomas linkedin Hobbies' );
         return Usuario
     } catch (error) {
         console.log(error)
     }
     }
+module.exports.buscarImagenUsuario=async(id)=>{
+
+    try {
+        const Usuario = await User.findById(id, 'foto_perfil' );
+        
+        return Usuario
+    } catch (error) {
+        console.log(error)
+    }
+    }
+
+    module.exports.enviarSolicitud=async(id)=>{
+
+        try {
+            const Usuario = await User.findById(id, 'nombre apellido_p apellido_m pais ciudad fecha_nac estudios certificaciones idiomas linkedin Hobbies' );
+            return Usuario
+        } catch (error) {
+            console.log(error)
+        }
+        }
+        

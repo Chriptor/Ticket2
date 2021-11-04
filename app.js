@@ -41,7 +41,7 @@ async function serverStart() {
     })
 }
 
-serverStart();
+
 
 app.use('/', login )
 app.get('/', (req, res) => {
@@ -53,8 +53,9 @@ app.get('/registrate', (req, res) => {
 })
 app.get('/info/:id', async (req, res) => {
     // res.render('info', {TituloW:"Info"})
-    res.render('info', {TituloW:"Info", info: await lista.buscar1Usuario(req.params.id)})
+    res.render('info', {TituloW:"Info", info: await lista.buscar1Usuario(req.params.id), foto: await lista.buscarImagenUsuario(req.params.id)})
 })
+app.use('/', rutasUsuario )
 app.get('/dashboard', verificaToken, async (req, res) => {
     
     res.render("dashboard",{TituloW:"Dashboard", arrayUsuario: await lista.listarUsuario(), userLoged: await lista.buscar1Usuario(req.cookies.idUser)})
@@ -68,10 +69,9 @@ app.get('/salir', async (req, res) => {
         })
         .redirect(301, '/')
     })
-    app.use('/', rutasUsuario )
    
 
 
     
 
-
+    serverStart();

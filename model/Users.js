@@ -1,7 +1,8 @@
+
 const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema({
-    
+   
     nombre: {
         type: String,
         required: true,
@@ -23,7 +24,7 @@ const userSchema = mongoose.Schema({
     correo: {
         type: String,
         required: true,
-        unique:true,
+        
         min: 5,
         max: 1024
     },
